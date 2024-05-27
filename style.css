@@ -2,7 +2,7 @@ body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-color: black;
     overflow-x: hidden;
 }
 
@@ -22,6 +22,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
+    border: 1px solid #fed811;
 }
 
 .logo img {
@@ -88,7 +89,7 @@ body {
 
 .menu-icon .bar1, .menu-icon .bar2, .menu-icon .bar3 {
     width: 30px;
-    height: 4px;
+    height: 5px;
     background-color: #fed811;
     margin: 6px 0;
     transition: 0.4s;
@@ -97,7 +98,7 @@ body {
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 150vh;
     overflow: hidden;
 }
 
@@ -139,6 +140,7 @@ body {
 
     .nav-links.active {
         display: flex;
+        border: 1px solid #fed811;
     }
 
     .cta {
@@ -157,4 +159,147 @@ body {
 
 .change .bar3 {
     transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/* About Section */
+
+.abt-heading{
+    color: #fed811;
+}
+.about-section {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 4em;
+    align-items: center;
+    padding: 50px;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    margin-top: 160px;
+    margin-bottom: 160px;
+    /* height: 90vh; */
+}
+
+.text-content {
+    max-width: 50%;
+}
+
+.text-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.text-content h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100px;
+    height: 5px;
+    background-color: #fed811;
+}
+
+.text-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #fed811;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fed811;
+}
+
+.image-content {
+    position: relative;
+    max-width: 60%;
+}
+
+.image-stack {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    cursor: pointer;
+
+}
+
+.image {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    border: 1.5px solid #fed811;
+}
+
+.image-top {
+    z-index: 2;
+    transform: rotate(0deg);
+}
+
+.image-bottom {
+    z-index: 1;
+    transform: rotate(-10deg);
+}
+
+
+/* Media Queries for Responsive Design */
+@media (max-width: 992px) {
+    .about-section {
+        flex-direction: column;
+        /* text-align: center; */
+        gap: 2em;
+        padding: 30px;
+        margin-top: 0;
+        /* margin-bottom: 200px; */
+    }
+
+    .text-content {
+        max-width: 100%;
+    }
+
+    .image-content {
+        max-width: 100%;
+    }
+
+    .image-stack {
+        width: 300px;
+        height: auto;
+    }
+
+    .image {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .text-content h1 {
+        font-size: 2em;
+    }
+
+    .text-content p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    .image {
+        width: 100%;
+    }
 }
