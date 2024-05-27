@@ -53,7 +53,7 @@ body {
     width: 0;
     height: 2px;
     display: block;
-    margin-top: 5px;
+    /* margin-top: 5px; */
     right: 0;
     background: #fed811;
     transition: width 0.3s ease;
@@ -69,7 +69,7 @@ body {
 .cta .get-in-touch {
     background-color: #fed811;
     color: black;
-    padding: 10px 20px;
+    padding: 7px 14px;
     border-radius: 10px;
     text-decoration: none;
     font-weight: 500;
