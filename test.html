@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Example</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-logo {
+    width: 150px;
+    height: auto;
+}
+
+.footer-right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.footer-contact {
+    margin-bottom: 10px;
+}
+
+.footer-icons a {
+    margin-left: 10px;
+}
+
+.footer-icons img {
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-right {
+        align-items: center;
+        text-align: center;
+    }
+    .footer-icons a {
+        margin: 0 5px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Your page content goes here -->
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="your-logo.png" alt="Logo" class="footer-logo">
+            </div>
+            <div class="footer-right">
+                <div class="footer-contact">
+                    <p>Email: example@example.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+                <div class="footer-icons">
+                    <a href="https://facebook.com" target="_blank">
+                        <img src="facebook-icon.png" alt="Facebook">
+                    </a>
+                    <a href="https://instagram.com" target="_blank">
+                        <img src="instagram-icon.png" alt="Instagram">
+                    </a>
+                    <a href="https://twitter.com" target="_blank">
+                        <img src="twitter-icon.png" alt="Twitter">
+                    </a>
+                    <a href="https://linkedin.com" target="_blank">
+                        <img src="linkedin-icon.png" alt="LinkedIn">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

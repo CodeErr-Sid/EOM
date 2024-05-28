@@ -11,7 +11,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: black;
-    padding: 30px 30px;
+    padding: 20px 20px;
     width: calc(100% - 40px);
     max-width: 1200px;
     margin: 0 auto;
@@ -26,7 +26,8 @@ body {
 }
 
 .logo img {
-    height: 40px;
+    height: auto;
+    width: 100px;
 }
 
 .nav-links {
@@ -123,7 +124,7 @@ body {
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 80px;
+        top: 95px;
         left: 0;
         background-color: black;
         border-radius: 10px;
@@ -177,7 +178,7 @@ body {
     color: white;
     margin-top: 160px;
     margin-bottom: 160px;
-    /* height: 90vh; */
+    min-height: 100%;
 }
 
 .text-content {
@@ -263,6 +264,7 @@ body {
         gap: 2em;
         padding: 30px;
         margin-top: 0;
+        padding-bottom: 200px;
         /* margin-bottom: 200px; */
     }
 
@@ -303,3 +305,105 @@ body {
         width: 100%;
     }
 }
+
+/* Footer */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+footer{
+    background-color: black;
+}
+.footercontainer{
+    width: 100%;
+    /* padding: 70px 30px 20px; */
+    border-top: 1px solid #fed811;
+}
+.footerlogo{
+    text-align: center;
+    justify-content: center;
+}
+.footericons{
+    display: flex;
+    justify-content: center;
+}
+.footericons a{
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+}
+.footericons a i{
+    font-size: 1.3em;
+    color: #fed811;
+}
+.footericons a:hover{
+    transition: 0.5s;
+}
+.footericons a:hover i{
+    color: white;
+    transition: 0.5s;
+}
+.footernav{
+    margin: 30px 0;
+}
+.footernav ul{
+    display: flex;
+    justify-content: center;
+}
+.footernav ul li a{
+    color: #fed811;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.1em;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+.footernav ul li a:hover{
+    opacity: 2;
+}
+.footerbottom{
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+}
+.footerbottom p{
+    color: #fed811;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .footernav ul {
+        flex-direction: column;
+    }
+
+    .footernav ul li {
+        margin: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .footericons a {
+        margin: 5px;
+    }
+
+    .footericons a i {
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footercontainer {
+        padding: 20px;
+    }
+
+    .footernav ul li a {
+        font-size: 1em;
+    }
+
+    .footericons a i {
+        font-size: 1em;
+    }
+}
+
+

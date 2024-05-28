@@ -26,3 +26,5 @@ document.getElementById('image-stack').addEventListener('click', function() {
         bottomImage.classList.add('image-bottom');
     }
 });
+
+// Gallery
