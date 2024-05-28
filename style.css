@@ -1,3 +1,9 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Poppins", sans-serif;
     margin: 0;
@@ -39,7 +45,8 @@ body {
 
 .nav-links li {
     margin: 0 15px;
-    position: relative; /* Ensure the pseudo-element is positioned relative to the li */
+    position: relative;
+    /* Ensure the pseudo-element is positioned relative to the li */
 }
 
 .nav-links a {
@@ -88,7 +95,9 @@ body {
     cursor: pointer;
 }
 
-.menu-icon .bar1, .menu-icon .bar2, .menu-icon .bar3 {
+.menu-icon .bar1,
+.menu-icon .bar2,
+.menu-icon .bar3 {
     width: 30px;
     height: 5px;
     background-color: #fed811;
@@ -164,9 +173,10 @@ body {
 
 /* About Section */
 
-.abt-heading{
+.abt-heading {
     color: #fed811;
 }
+
 .about-section {
     display: flex;
     /* justify-content: space-between; */
@@ -255,6 +265,94 @@ body {
     transform: rotate(-10deg);
 }
 
+#our-mentors-head {
+    padding: 1.3em 0;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(2.5rem, 2.5vh, 4rem);
+    background-color: white;
+    color: black;
+}
+
+#our-mentors {
+    min-height: 100vh;
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 100px 50px;
+    gap: 100px 50px;
+}
+
+
+
+#our-mentors .om-card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 270px;
+    border: 2px solid black;
+    transition: .5s;
+}
+
+
+#our-mentors .om-card:hover {
+    height: 400px;
+}
+
+#our-mentors .om-card .om-imgBox {
+    position: absolute;
+    top: 20px;
+    width: 250px;
+    height: 220px;
+    background: #eeeeee;
+    border-radius: 16px;
+    transition: .5s;
+}
+
+#our-mentors .om-card .om-imgBox img {
+    border-radius: 16px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: cover;
+    width: 90%;
+    height: 100%;
+}
+
+#our-mentors .om-card:hover .om-imgBox {
+    top: -100px;
+    scale: .75;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.om-content {
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    padding: 0 30px;
+    text-align: center;
+    top: 252px;    
+    height: 29px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.om-content .om-content-head {
+    font-size: 1.2em;
+    font-weight: 700;
+
+}
+
+#our-mentors .om-card:hover .om-content {
+    top: 150px;
+    height: 250px;
+}
 
 /* Media Queries for Responsive Design */
 @media (max-width: 992px) {
