@@ -26,3 +26,8 @@ document.getElementById('image-stack').addEventListener('click', function() {
         bottomImage.classList.add('image-bottom');
     }
 });
+
+// our partners section
+
+var copy = document.querySelector(".logos-slide").cloneNode(true);
+      document.querySelector(".logos").appendChild(copy);
