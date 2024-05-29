@@ -42,7 +42,6 @@ body {
     background-color: black;
     padding: 20px 20px;
     width: calc(100% - 40px);
-    max-width: 1200px;
     margin: 0 auto;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -52,7 +51,20 @@ body {
     transform: translateX(-50%);
     z-index: 1000;
     border: 1px solid #fed811;
+    transition: all 0.3s ease;
+    /* Add transition for smooth effect */
 }
+
+.navbar.scrolled {
+    width: 100%;
+    left: 0;
+    transform: translateX(0);
+    top: 0;
+    border-radius: 0;
+    border: none;
+    padding: 10px 20px;
+}
+
 
 .logo img {
     height: auto;
@@ -288,7 +300,124 @@ body {
     transform: rotate(-10deg);
 }
 
-#our-mentors-head {
+
+/* our mentors */
+
+#our-mentors-2 {
+    width: 100%;
+    min-height: 70vh;
+    background-color: white;
+    color: black;
+}
+
+#our-mentors-2 .om-2-container {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#our-mentors-2 .om-2-container .om-2-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    border: 3px solid #e0e0e0;
+    transition: .5s;
+}
+
+#our-mentors-2 .om-2-container .om-2-box:nth-child(1) {
+    border-left: none;
+}
+
+#our-mentors-2 .om-2-container .om-2-box:nth-child(2) {
+    border-left: none;
+    border-right: none;
+}
+
+#our-mentors-2 .om-2-container .om-2-box:nth-child(3) {
+    border-right: none;
+}
+
+#our-mentors-2 .om-2-container .om-2-box:hover {
+    background-color: black;
+    color: white;
+}
+
+#our-mentors-2 .om-2-container .om-2-box:hover .om-company-logo {
+    background-color: white;
+}
+
+
+.om-company-logo {
+    width: 80%;
+    padding: 1rem;
+    border-radius: 2rem;
+    transition: .5s;
+}
+
+.om-company-logo img {
+    width: 100%;
+    aspect-ratio: 5/1;
+    object-fit: contain;
+}
+
+
+
+
+#our-mentors-2 .om-2-container .om-2-box .om-img {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+
+#our-mentors-2 .om-2-container .om-2-box .om-img img {
+    width: 50%;
+    border-radius: 8rem;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+#our-mentors-2 .om-2-container .om-2-box .om-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+
+
+
+#our-mentors-2 .om-2-container .om-2-box .om-name h3 {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+
+}
+
+#our-mentors-2 .om-2-container .om-2-box .om-name h5 {
+    font-size: 1.2rem;
+}
+
+#our-mentors-2 .om-2-container .om-2-box .om-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 2rem;
+    padding-bottom: 2rem;
+}
+
+#our-mentors-2 .om-2-container .om-2-box .om-description .om-about {
+    text-align: center;
+}
+
+
+
+
+
+
+/* #our-mentors-head {
     padding: 1.3em 0;
     width: 100%;
     text-align: center;
@@ -379,7 +508,8 @@ body {
 #our-mentors .om-card:hover .om-content {
     top: 150px;
     height: 250px;
-}
+} */
+
 
 #our-partners {
     background-color: white;

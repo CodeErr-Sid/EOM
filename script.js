@@ -9,6 +9,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+// navscrolled 
+
+const navbar = document.querySelector('.navbar');
+
+function handleScroll() {
+    if (window.scrollY > 0) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+}
+
+window.addEventListener('scroll', handleScroll);
+
 // About Section
 document.getElementById('image-stack').addEventListener('click', function () {
     const topImage = document.getElementById('image1');
@@ -151,33 +166,32 @@ var swiper = new Swiper(`[unique-script-id="w-w-dm-id"] .mySwiper`, {
     slidesPerView: 1,
     spaceBetween: 30,
     pagination: {
-      el: `[unique-script-id="w-w-dm-id"] .swiper-pagination`,
-      clickable: true,
+        el: `[unique-script-id="w-w-dm-id"] .swiper-pagination`,
+        clickable: true,
     },
     breakpoints: {
-      200: {
-        slidesPerView: 1
-      },
-      501: {
-        slidesPerView: 1.5
-      },
-      769: {
-        slidesPerView: 2.5,
-        spaceBetween: 10
-      },
-      1025: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      },
+        200: {
+            slidesPerView: 1
+        },
+        501: {
+            slidesPerView: 1.5
+        },
+        769: {
+            slidesPerView: 2.5,
+            spaceBetween: 10
+        },
+        1025: {
+            slidesPerView: 3,
+            spaceBetween: 20
+        },
     },
     autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
+        delay: 3000,
+        disableOnInteraction: false,
     },
     navigation: {
-      nextEl: `[unique-script-id="w-w-dm-id"] .swiper-button-next`,
-      prevEl: `[unique-script-id="w-w-dm-id"] .swiper-button-prev`,
+        nextEl: `[unique-script-id="w-w-dm-id"] .swiper-button-next`,
+        prevEl: `[unique-script-id="w-w-dm-id"] .swiper-button-prev`,
     },
     loop: true,
-  });
-  
+});
