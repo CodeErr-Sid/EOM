@@ -26,12 +26,12 @@ function onMouseMove(e) {
 
 function updateCursorPosition(x, y) {
     TweenMax.to($bigBall, .4, {
-        x: x - 15,
-        y: y - 15
+        x: x - 20,
+        y: y - 20
     });
     TweenMax.to($smallBall, .1, {
         x: x - 5,
-        y: y - 7
+        y: y - 5
     });
 }
 
