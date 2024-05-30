@@ -1,13 +1,79 @@
-// Nav Bar
-document.addEventListener('DOMContentLoaded', () => {
-    const menuIcon = document.getElementById('menu-icon');
-    const navLinks = document.getElementById('nav-links');
+// smooth scrolling
 
-    menuIcon.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        menuIcon.classList.toggle('change');
+document.querySelectorAll('#navlinks li a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });
+
+// Nav Bar
+const navlinks = document.querySelector("#nav-links");
+
+navlinks.querySelectorAll('li a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        scrollToElement(targetElement);
+      }
+    });
+  });
+
+  function scrollToElement(element) {
+    const targetPosition = element.getBoundingClientRect().top - document.querySelector('nav').offsetHeight;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition;
+    const duration = 1000; // Duration in milliseconds (1000ms = 1s)
+    let start = null;
+
+    window.requestAnimationFrame(function step(timestamp) {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+      const progressPercent = Math.min(progress / duration, 1);
+      window.scrollTo(0, startPosition + distance * easeInOutQuad(progressPercent));
+
+      if (progress < duration) {
+        window.requestAnimationFrame(step);
+      }
+    });
+  }
+
+  function easeInOutQuad(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  }
+// About us section
+
+document.addEventListener('DOMContentLoaded', function () {
+    const aboutSection = document.querySelector('.about-section');
+    const textContent = document.querySelector('.text-content');
+    const imageContent = document.querySelector('.image-content');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                textContent.classList.add('animate');
+                imageContent.classList.add('animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    observer.observe(aboutSection);
+});
+
 
 
 // navscrolled 
@@ -17,32 +83,36 @@ const navbar = document.querySelector('.navbar');
 function handleScroll() {
     if (window.scrollY > 0) {
         navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
     }
 }
 
 window.addEventListener('scroll', handleScroll);
 
 // About Section
-document.getElementById('image-stack').addEventListener('click', function () {
-    const topImage = document.getElementById('image1');
-    const bottomImage = document.getElementById('image2');
+document.addEventListener('DOMContentLoaded', function () {
+    const aboutSection = document.querySelector('.about-section');
+    const textContent = document.querySelector('.text-content');
+    const imageContent = document.querySelector('.image-content');
 
-    if (topImage.classList.contains('image-top')) {
-        topImage.classList.remove('image-top');
-        topImage.classList.add('image-bottom');
-        bottomImage.classList.remove('image-bottom');
-        bottomImage.classList.add('image-top');
-    } else {
-        topImage.classList.remove('image-bottom');
-        topImage.classList.add('image-top');
-        bottomImage.classList.remove('image-top');
-        bottomImage.classList.add('image-bottom');
-    }
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                textContent.classList.add('animate');
+                imageContent.classList.add('animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    observer.observe(aboutSection);
 });
-
-
 
 
 //   testimonials animations
