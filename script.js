@@ -1,3 +1,52 @@
+// cursor integraitons
+
+
+// JavaScript code for cursor interaction
+const $bigBall = document.querySelector('.cursor__ball--big');
+const $smallBall = document.querySelector('.cursor__ball--small');
+const $hoverables = document.querySelectorAll('.hoverable');
+
+
+document.body.addEventListener('mousemove', onMouseMove);
+
+for (let i = 0; i < $hoverables.length; i++) {
+    $hoverables[i].addEventListener('mouseenter', onMouseHover);
+    $hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
+}
+
+function onMouseMove(e) {
+    const offsetX = e.clientX; // Get the cursor position relative to the window
+    const offsetY = e.clientY;
+
+    updateCursorPosition(offsetX, offsetY); // Update cursor position
+
+    // Check if the cursor is within any section or footer
+   
+}
+
+function updateCursorPosition(x, y) {
+    TweenMax.to($bigBall, .4, {
+        x: x - 15,
+        y: y - 15
+    });
+    TweenMax.to($smallBall, .1, {
+        x: x - 5,
+        y: y - 7
+    });
+}
+
+function onMouseHover() {
+    TweenMax.to($bigBall, .3, {
+        scale: 4
+    });
+}
+
+function onMouseHoverOut() {
+    TweenMax.to($bigBall, .3, {
+        scale: 1
+    });
+}
+
 // smooth scrolling
 
 document.querySelectorAll('#navlinks li a').forEach(anchor => {
@@ -14,18 +63,18 @@ document.querySelectorAll('#navlinks li a').forEach(anchor => {
 const navlinks = document.querySelector("#nav-links");
 
 navlinks.querySelectorAll('li a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1);
-      const targetElement = document.getElementById(targetId);
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
 
-      if (targetElement) {
-        scrollToElement(targetElement);
-      }
+        if (targetElement) {
+            scrollToElement(targetElement);
+        }
     });
-  });
+});
 
-  function scrollToElement(element) {
+function scrollToElement(element) {
     const targetPosition = element.getBoundingClientRect().top - document.querySelector('nav').offsetHeight;
     const startPosition = window.pageYOffset;
     const distance = targetPosition;
@@ -33,20 +82,20 @@ navlinks.querySelectorAll('li a').forEach(anchor => {
     let start = null;
 
     window.requestAnimationFrame(function step(timestamp) {
-      if (!start) start = timestamp;
-      const progress = timestamp - start;
-      const progressPercent = Math.min(progress / duration, 1);
-      window.scrollTo(0, startPosition + distance * easeInOutQuad(progressPercent));
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        const progressPercent = Math.min(progress / duration, 1);
+        window.scrollTo(0, startPosition + distance * easeInOutQuad(progressPercent));
 
-      if (progress < duration) {
-        window.requestAnimationFrame(step);
-      }
+        if (progress < duration) {
+            window.requestAnimationFrame(step);
+        }
     });
-  }
+}
 
-  function easeInOutQuad(t) {
+function easeInOutQuad(t) {
     return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-  }
+}
 // About us section
 
 document.addEventListener('DOMContentLoaded', function () {
