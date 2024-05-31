@@ -21,7 +21,7 @@ function onMouseMove(e) {
     updateCursorPosition(offsetX, offsetY); // Update cursor position
 
     // Check if the cursor is within any section or footer
-   
+
 }
 
 function updateCursorPosition(x, y) {
@@ -46,6 +46,35 @@ function onMouseHoverOut() {
         scale: 1
     });
 }
+
+// preloaing page
+
+document.addEventListener('DOMContentLoaded', function () {
+    const preloader = document.querySelector('.pl-preloader');
+    const words = document.querySelectorAll('.pl-word');
+    const logo = document.querySelector('.pl-logo');
+    const content = document.getElementById('eom-content');
+
+    // When the last word has finished fading in, fade them all out together
+    words[words.length - 1].addEventListener('animationend', () => {
+        words.forEach(word => {
+            word.style.animation = 'fadeOut 1s ease-in-out forwards';
+        });
+
+        // Start the logo animation after words have faded out
+        setTimeout(() => {
+            logo.style.display = "block";
+            logo.style.animationPlayState = 'running';
+        }, 1000); // Delay to start logo animation
+    });
+
+    // Hide preloader and show content after logo animation
+    logo.addEventListener('animationend', () => {
+        preloader.style.display = 'none';
+        content.style.display = 'block';
+        document.body.style.overflow = 'auto';
+    });
+});
 
 // smooth scrolling
 
@@ -161,6 +190,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
     observer.observe(aboutSection);
+});
+
+
+document.getElementById('image-stack').addEventListener('click', function () {
+    const topImage = document.getElementById('image1');
+    const bottomImage = document.getElementById('image2');
+
+    if (topImage.classList.contains('image-top')) {
+        topImage.classList.remove('image-top');
+        topImage.classList.add('image-bottom');
+        bottomImage.classList.remove('image-bottom');
+        bottomImage.classList.add('image-top');
+    } else {
+        topImage.classList.remove('image-bottom');
+        topImage.classList.add('image-top');
+        bottomImage.classList.remove('image-top');
+        bottomImage.classList.add('image-bottom');
+    }
 });
 
 
