@@ -195,6 +195,7 @@ body {
     display: flex;
     margin: 0;
     padding: 0;
+    cursor: none;
 }
 
 .nav-links li {
@@ -246,7 +247,7 @@ body {
 
 .menu-icon {
     display: none;
-    cursor: pointer;
+    cursor: none;
 }
 
 .menu-icon .bar1,
@@ -391,7 +392,7 @@ body {
     position: relative;
     width: 400px;
     height: 300px;
-    cursor: pointer;
+    cursor: none;
 }
 
 .image {
@@ -653,7 +654,7 @@ body {
     display: block;
     position: absolute;
     color: #000;
-    cursor: pointer;
+    cursor: none;
     font-size: 2em;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -671,7 +672,7 @@ body {
 }
 
 .testim .arrow:before {
-    cursor: pointer;
+    cursor: none;
 }
 
 .testim .arrow:hover {
@@ -706,7 +707,7 @@ body {
     border-radius: 50%;
     border: 1px solid #000;
     margin: 0 10px;
-    cursor: pointer;
+    cursor: none;
     -webkit-transition: all .5s ease-in-out;
     -ms-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
