@@ -14,6 +14,8 @@
 } */
 
 
+
+
 @keyframes MoveBackgroundPosition {
     0% {
         background-position: 0% 50%
@@ -41,7 +43,7 @@ body {
     background-color: black;
     cursor: none;
     overflow: hidden;
-    
+
 }
 
 /* pre-loading page */
@@ -151,7 +153,11 @@ body {
     fill: #f7f8fa;
 }
 
-
+@media screen and (0px < width <=768px) {
+    .cursor {
+        display: none;
+    }
+}
 
 
 
@@ -560,6 +566,16 @@ body {
     text-align: center;
 }
 
+@media screen and (0px <=width <=768px) {
+    .om-2-container {
+        flex-wrap: wrap;
+    }
+
+    .om-2-box {
+        border: none;
+    }
+}
+
 /* our partners */
 /* Reset some default browser styles */
 
@@ -597,7 +613,7 @@ body {
     transition: .5s;
 }
 
-.op-box:hover{
+.op-box:hover {
     border-color: yellow;
     box-shadow: 0 4px 6px rgba(238, 255, 0, 0.863);
 }
