@@ -4,154 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preloader Example</title>
+    <title>Document</title>
     <style>
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background: white;
+        body {
+            padding: 40px;
         }
 
-        .pl-preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            color: white;
-            font-family: Arial, sans-serif;
-            z-index: 1000;
+        /* Animation */
+
+        @keyframes fadeInUp {
+            from {
+                transform: translate3d(0, 40px, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0);
+                opacity: 1
+            }
         }
 
-        .pl-words {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 20;
+        @-webkit-keyframes fadeInUp {
+            from {
+                transform: translate3d(0, 40px, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0);
+                opacity: 1
+            }
         }
 
-        .pl-word {
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            -webkit-animation-duration: 1s;
+            -webkit-animation-fill-mode: both
+        }
+
+        .animatedFadeInUp {
+            opacity: 0
+        }
+
+        .fadeInUp {
             opacity: 0;
-            font-size: 2em;
-            margin: 0 10px;
-            animation: fadeIn 1s ease-in-out forwards;
-        }
-
-        .pl-word:nth-child(1) {
-            animation-delay: 0s;
-        }
-
-        .pl-word:nth-child(2) {
-            animation-delay: 0.5s;
-        }
-
-        .pl-word:nth-child(3) {
-            animation-delay: 1s;
-        }
-
-        .pl-logo {
-            display: none;
-            opacity: 0;
-            font-size: 3em;
-            z-index: 20;
-            animation: logoAnimation 3s ease-in-out forwards;
-            animation-play-state: paused;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeOut {
-            0% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
-        @keyframes logoAnimation {
-
-            0% {
-                opacity: 0;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0;
-                transform: scale(2);
-            }
+            animation-name: fadeInUp;
+            -webkit-animation-name: fadeInUp;
         }
     </style>
 </head>
 
 <body>
-    <div class="pl-preloader">
-        <div class="pl-words">
-            <span class="pl-word">First</span>
-            <span class="pl-word">Second</span>
-            <span class="pl-word">Third</span>
-        </div>
-        <div class="pl-logo">
-            <img src="assets/logo/logo.png" alt="">
-        </div>
+    <div class="animated animatedFadeInUp fadeInUp">
+        <h1>It's easy.</h1>
     </div>
-
-    <div id="content" style="display: none;">
-        <!-- Your website content goes here -->
-        <h1>Welcome to My Website</h1>
-        <p>This is the main content of the website.</p>
+    <div class="animated animatedFadeInUp fadeInUp">
+        <h2>Search</h2>
+        <p>Know what you want to listen to? Just search and hit play.</p>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const preloader = document.querySelector('.pl-preloader');
-            const words = document.querySelectorAll('.pl-word');
-            const logo = document.querySelector('.pl-logo');
-            const content = document.getElementById('content');
-
-            // When the last word has finished fading in, fade them all out together
-            words[words.length - 1].addEventListener('animationend', () => {
-                words.forEach(word => {
-                    word.style.animation = 'fadeOut 1s ease-in-out forwards';
-                });
-
-                // Start the logo animation after words have faded out
-                setTimeout(() => {
-                    logo.style.display = "block";
-                    logo.style.animationPlayState = 'running';
-                }, 1000); // Delay to start logo animation
-            });
-
-            // Hide preloader and show content after logo animation
-            logo.addEventListener('animationend', () => {
-                preloader.style.display = 'none';
-                content.style.display = 'block';
-                document.body.style.overflow = 'auto';
-            });
-        });
-    </script>
+    <div class="animated animatedFadeInUp fadeInUp">
+        <h2>Browse</h2>
+        <p>Check out the latest charts, brand new releases and great playlists for right now.</p>
+    </div>
+    <div class="animated animatedFadeInUp fadeInUp">
+        <h2>Discover</h2>
+        <p>Enjoy new music every Monday with your own personal playlist. Or sit back and enjoy Radio.</p>
+    </div>
 </body>
 
 </html>

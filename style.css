@@ -41,6 +41,7 @@ body {
     background-color: black;
     cursor: none;
     overflow: hidden;
+    
 }
 
 /* pre-loading page */
@@ -328,17 +329,6 @@ body {
 
 /* About Section */
 
-@keyframes fadeInSlideFromTop {
-    0% {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 @keyframes fadeInSlideFromBottom {
     0% {
@@ -373,7 +363,7 @@ body {
 
 .text-content.animate {
     opacity: 1;
-    animation: fadeInSlideFromTop 1s ease-in-out;
+    animation: fadeInSlideFromBottom 1s ease-in-out;
 }
 
 .image-content {
@@ -570,37 +560,91 @@ body {
     text-align: center;
 }
 
+/* our partners */
+/* Reset some default browser styles */
 
-
-#our-partners {
-    background-color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-
-.logos-slide {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.logo-box {
-    flex: 1 1 30%;
+.op-section {
+    min-height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    flex-direction: column;
+    background-color: #000000;
 }
 
-/* Ensure images fit within their containers */
-.logo-box img {
-    max-width: 100%;
-    max-height: 100px;
-    /* Adjust this value based on your design */
-    height: auto;
-    width: auto;
+.op-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
 }
+
+.op-box {
+    background-color: #fff;
+    border-radius: 8px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(33.333% - 40px);
+    min-width: 280px;
+    max-width: 400px;
+    border: 1px solid white;
+    transition: .5s;
+}
+
+.op-box:hover{
+    border-color: yellow;
+    box-shadow: 0 4px 6px rgba(238, 255, 0, 0.863);
+}
+
+.op-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2/1;
+    object-fit: contain;
+    padding: 2rem;
+}
+
+.op-content {
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    background: black;
+    color: white;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.op-content h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.op-content p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .op-box {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .op-box {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+
 
 
 #primary-heading-w {
