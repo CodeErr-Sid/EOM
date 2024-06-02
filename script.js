@@ -167,6 +167,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// hamburger-menu
+document.addEventListener('DOMContentLoaded', () => {
+    const menuIcon = document.getElementById('menu-icon');
+    const navLinks = document.getElementById('nav-links');
+
+    menuIcon.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuIcon.classList.toggle('change');
+    });
+});
+
+
 // smooth scrolling
 
 document.querySelectorAll('#navlinks li a').forEach(anchor => {
@@ -242,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // testimonials
     const testimSection = document.querySelector("#testimonials");
-    const testimHeading = testimSection.querySelector("#primary-heading-w")
+    const testimHeading = document.querySelector(".testim-heading")
     const testimContent = testimSection.querySelector(".testim")
 
     // Intersection Observer Options
