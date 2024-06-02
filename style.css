@@ -336,15 +336,27 @@ body {
 /* About Section */
 
 
-@keyframes fadeInSlideFromBottom {
+@keyframes fadeInSlideFromLeft {
     0% {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateX(50px);
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInSlideFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
@@ -356,9 +368,7 @@ body {
     justify-content: center;
     background-color: black;
     color: white;
-    margin-top: 160px;
-    margin-bottom: 160px;
-    min-height: 100%;
+    min-height: 100vh;
 }
 
 .text-content {
@@ -369,7 +379,7 @@ body {
 
 .text-content.animate {
     opacity: 1;
-    animation: fadeInSlideFromBottom 1s ease-in-out;
+    animation: fadeInSlideFromRight 2s ease-in-out;
 }
 
 .image-content {
@@ -381,7 +391,7 @@ body {
 
 .image-content.animate {
     opacity: 1;
-    animation: fadeInSlideFromBottom 1s ease-in-out;
+    animation: fadeInSlideFromLeft 2s ease-in-out;
 }
 
 .image-stack {
@@ -469,7 +479,10 @@ body {
     flex-direction: row;
     width: 90%;
     margin: 0 auto;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
 }
+
 
 #our-mentors-2 .om-2-container .om-2-box {
     display: flex;
@@ -660,6 +673,29 @@ body {
     }
 }
 
+/* Slide-Down Fade-In Animation */
+@keyframes slideDownFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply Animation to Heading */
+#our-partners #primary-heading-b.animate {
+    animation: slideDownFadeIn 0.5s ease forwards;
+}
+
+#our-partners .op-box.animate {
+    animation: zoomOutFadeIn 2s ease forwards;
+}
+
+
 
 
 
@@ -670,6 +706,7 @@ body {
     font-size: clamp(2.5rem, 2.5vh, 4rem);
     background-color: white;
     color: black;
+    opacity: 0;
     font-weight: 700;
 }
 
@@ -681,7 +718,52 @@ body {
     background-color: black;
     color: white;
     font-weight: 700;
+    opacity: 0;
 }
+
+/* Zoom-Out Fade-In Animation */
+@keyframes zoomOutFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Apply Animation to Headings */
+.abt-heading.animate,
+#primary-heading-w.animate,
+#primary-heading-b.animate {
+    animation: zoomOutFadeIn 2s ease forwards;
+}
+
+
+
+/* Slide-From-Bottom-to-Up Fade-In Animation */
+@keyframes slideFromBottomFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply Animation to Mentor Content */
+.om-2-container.animate {
+    animation: slideFromBottomFadeIn 2s ease forwards;
+}
+
+
+
+
 
 /* testimonials  */
 #testimonials {
@@ -1481,8 +1563,7 @@ footer {
     background-position-x: initial;
     background-position-y: initial;
     background-size: initial;
-    background-repeat-x: initial;
-    background-repeat-y: initial;
+    background-repeat: inti;
     background-attachment: initial;
     background-origin: initial;
     background-clip: initial;
@@ -1502,12 +1583,11 @@ footer {
     background-position-x: initial;
     background-position-y: initial;
     background-size: initial;
-    background-repeat-x: initial;
-    background-repeat-y: initial;
+    background-repeat: inti;
     background-attachment: initial;
     background-origin: initial;
     background-clip: initial;
-    background-color: #f49892;
+    background-color: yellow;
 }
 
 .gallery .responsive-container-block {
@@ -1660,8 +1740,7 @@ footer {
     background-position-x: initial;
     background-position-y: initial;
     background-size: initial;
-    background-repeat-x: initial;
-    background-repeat-y: initial;
+    background-repeat: inti;
     background-attachment: initial;
     background-origin: initial;
     background-clip: initial;

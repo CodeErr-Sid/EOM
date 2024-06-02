@@ -130,29 +130,84 @@ function easeInOutQuad(t) {
 // About us section
 
 document.addEventListener('DOMContentLoaded', function () {
+    // About Us Section
     const aboutSection = document.querySelector('.about-section');
     const textContent = document.querySelector('.text-content');
     const imageContent = document.querySelector('.image-content');
 
+    // Mentors Section
+    const mentorsSection = document.querySelector("#our-mentors-2");
+    const mentorHeading = mentorsSection.querySelector("#primary-heading-w");
+    const mentorContent = mentorsSection.querySelector(".om-2-container");
+
+    // Our Partners Section
+    const partnersSection = document.querySelector("#our-partners");
+    const partnersHeading = partnersSection.querySelector("#primary-heading-b");
+    const partnersContent = partnersSection.querySelectorAll(".op-box");
+
+    // Gallery Sections
+
+    const gallerySection = document.querySelector("#gallery");
+    const galleryHeading = gallerySection.querySelector("#primary-heading-b")
+    const galleryContent = gallerySection.querySelector(".swiper-container")
+
+    // testimonials
+    const testimSection = document.querySelector("#testimonials");
+    const testimHeading = testimSection.querySelector("#primary-heading-w")
+    const testimContent = testimSection.querySelector(".testim")
+
+    // Intersection Observer Options
     const observerOptions = {
         root: null,
         rootMargin: '0px',
         threshold: 0.1
     };
 
+    // Intersection Observer Callback
     const observerCallback = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                textContent.classList.add('animate');
-                imageContent.classList.add('animate');
+                if (entry.target === aboutSection) {
+                    textContent.classList.add('animate');
+                    imageContent.classList.add('animate');
+                } else if (entry.target === mentorsSection) {
+                    mentorHeading.classList.add('animate');
+                    mentorContent.classList.add('animate');
+                } else if (entry.target === partnersSection) {
+                    partnersHeading.classList.add('animate');
+                    partnersContent.forEach(item => item.classList.add('animate'));
+                } else if (entry.target === gallerySection) {
+                    galleryHeading.classList.add('animate');
+                    galleryContent.classList.add('animate');
+                } else if (entry.target === testimSection) {
+                    testimHeading.classList.add('animate');
+                    testimContent.classList.add('animate');
+                }
                 observer.unobserve(entry.target);
             }
         });
     };
 
+    // Create Intersection Observer
     const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe About Us Section
     observer.observe(aboutSection);
+
+    // Observe Mentors Section
+    observer.observe(mentorsSection);
+
+    // Observe Our Partners Section
+    observer.observe(partnersSection);
+
+    // Observe Our Gallery Section
+    observer.observe(gallerySection);
+
+    // Observe Our Testimonials Section
+    observer.observe(testimSection);
 });
+
+
 
 
 
