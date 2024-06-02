@@ -71,6 +71,13 @@ body {
     z-index: 20;
 }
 
+@media screen and (0px <= width <= 500px) {
+    .pl-words{
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
 .pl-word {
     opacity: 0;
     font-size: 2em;
@@ -726,7 +733,7 @@ body {
     opacity: 0;
 }
 
-.testimonials-outer-container{
+.testimonials-outer-container {
     background-color: white;
     height: 100vh;
 }
