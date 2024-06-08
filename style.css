@@ -738,6 +738,7 @@ body {
 .testimonials-outer-container {
     background-color: black;
     height: 81vh;
+    margin-bottom: -150px;
     border-top: 0.1px solid #fed811;
 }
 @media only screen and (max-width: 767px) {
