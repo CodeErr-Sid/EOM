@@ -18,6 +18,7 @@
 
     <!-- stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/jquery/2.2.1/jquery.min.js"></script>
 
     <!-- Font Awsome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -187,7 +188,7 @@
 
         <!-- gallery -->
         <!-- Gallery -->
-        <div class="gallery" unique-script-id="w-w-dm-id" id="gallery">
+        <div class="gallery" unique-script-id="w-w-dm-id" id="gallery" style="border-top: 0.1px solid #fed811;">
             <div class="responsive-container-block bg">
                 <div class="responsive-container-block">
                     <h1 id="primary-heading-b">GALLERY</h1>
@@ -237,7 +238,85 @@
             </div>
         </div>
         <!-- Gallery -->
-        <!-- gallery -->
+
+
+        <!-- FAQ -->
+<section class="faq2">
+         <div class="faq1">
+            <h1 id="primary-heading-b">FAQs</h1>
+
+<div class="wrapper">
+  
+  <div class="container4">
+    <div class="question">
+      How do I verify my email?
+    </div>
+    <div class="answercont">
+      <div class="answer">
+        Click the link in the verification email from verify@codepen.io (be sure to check your spam folder or other email tabs if it's not in your inbox).
+Or, send an email with the subject "Verify" to verify@codepen.io from the email address you use for your CodePen account.<br><br>
+
+      </div>
+    </div>
+  </div>
+  
+    <div class="container4">
+    <div class="question">
+      My Pen loads infinitely or crashes the browser.
+    </div>
+    <div class="answercont">
+      <div class="answer">
+        It's likely an infinite loop in JavaScript that we could not catch. To fix, add ?turn_off_js=true to the end of the URL (on any page, like the Pen or Project editor, your Profile page, or the Dashboard) to temporarily turn off JavaScript. When you're ready to run the JavaScript again, remove ?turn_off_js=true and refresh the page.<br><br>
+
+      </div>
+    </div>
+  </div>
+  
+      <div class="container4">
+    <div class="question">
+      How do I contact the creator of a Pen?
+    </div>
+    <div class="answercont">
+      <div class="answer">
+        You can leave a comment on any public Pen. Click the "Comments" link in the Pen editor view, or visit the Details page.<br><br>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="container4">
+    <div class="question">
+      What version of [library] does CodePen use?
+    </div>
+    <div class="answercont">
+      <div class="answer">
+        We have our current list of library versions 
+   
+      </div>
+    </div>
+  </div>
+  
+  <div class="container4">
+    <div class="question">
+      What are forks?
+    </div>
+    <div class="answercont">
+      <div class="answer">
+        A fork is a complete copy of a Pen or Project that you can save to your own account and modify. Your forked copy comes with everything the original author wrote, including all of the code and any dependencies.<br><br>
+
+      </div>
+    </div>
+  </div>
+  
+</div>
+</section>
+
+         </div>
+
+        <!-- faq -->
+
+
+
+
 
         <!-- testimonials -->
         <div class="testimonials-outer-container">
@@ -331,6 +410,13 @@
 
     </div>
     <!-- testimonials -->
+             <!-- TYPING -->
+             <div class="type">
+                <div class="container5">
+                    <p>Join Us For <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+                  </div>
+             </div>
+             <!-- TYPING -->
 
 
     <!-- Footer -->
@@ -366,8 +452,45 @@
     </section>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            var swiper = new Swiper([unique-script-id="w-w-dm-id"] .mySwiper, {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                pagination: {
+                    el: [unique-script-id="w-w-dm-id"] .swiper-pagination,
+                    clickable: true,
+                },
+                breakpoints: {
+                    200: {
+                        slidesPerView: 1
+                    },
+                    501: {
+                        slidesPerView: 1.5
+                    },
+                    769: {
+                        slidesPerView: 2.5,
+                        spaceBetween: 10
+                    },
+                    1025: {
+                        slidesPerView: 3,
+                        spaceBetween: 20
+                    },
+                },
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: [unique-script-id="w-w-dm-id"] .swiper-button-next,
+                    prevEl: [unique-script-id="w-w-dm-id"] .swiper-button-prev,
+                },
+                loop: true,
+            });
+        });
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
-    <script src="script.js" type="module"></script>
+    <script src="script.js" ></script>
 </body>
 
 </html>
